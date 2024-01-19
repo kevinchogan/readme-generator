@@ -1,7 +1,7 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
 
-const promptUser = () =>
+const promptUser = () => {
   inquirer.prompt([
     {
       type: "input",
@@ -25,7 +25,7 @@ const promptUser = () =>
     },
     {
       type: "input",
-      message: "Please provide a (visible) name for your screenshot.",
+      message: "Please provide alternate text for your screenshot.",
       name: "scName",
     },
     {
@@ -38,7 +38,14 @@ const promptUser = () =>
       message: "Please provide a list of credits, including collaborators, 3rd party assets, or tutorials used in the making of this project.",
       name: "credits",
     },
-  ]);
+  ])
+  .then((answers) => {
+    const htmlText = makeReadMe(answers);
+    fs.writeFile("README.md", htmlText, (error) => {
+      error ? console.error(error) : console.log("Success!");
+    });
+  });
+}
 
 const makeReadMe = ({
   title,
@@ -74,12 +81,4 @@ const makeReadMe = ({
   Please refer to the LICENSE in the repo.
 `;
 
-const init = () => {
-  promptUser()
-    // Use writeFileSync method to use promises instead of a callback function
-    .then((answers) => fs.writeFileSync("README2.md", makeReadMe(answers)))
-    .then(() => console.log("Successfully wrote to README.md"))
-    .catch((err) => console.error(err));
-};
-
-init();
+promptUser();
