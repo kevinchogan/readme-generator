@@ -13,8 +13,8 @@ This is a node.js application that prompts for project information and automatic
 - [Credits](#credits)
 - [License](#license)
 - [How to Contribute](#guidelines)
-- [Tests](#Tests)
-- [Questions](#Questions)
+- [Tests](#tests)
+- [Questions](#questions)
 
 ## Installation
 

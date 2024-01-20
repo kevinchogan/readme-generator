@@ -163,8 +163,8 @@ ${description}
 - [Credits](#credits)
 - [License](#license)
 - [How to Contribute](#guidelines)
-- [Tests](#Tests)
-- [Questions](#Questions)
+- [Tests](#tests)
+- [Questions](#questions)
 
 ## Installation
 
