@@ -25,7 +25,7 @@ After cloning the repo, please run 'npm install' to get the dependent modules (e
 After the modules are installed, run by typing 'node index.js' from the terminal.  You will then be prompted with a series of project related questions.
 
 ![alt ReadMe generator screenshot](./assets/capture.png)
-[Demo Video](https://youtu.be/DAqwXBUOlgA)
+[Demo Video](https://youtu.be/Wr1VyWIsC-I)
 
 ## Credits
 
