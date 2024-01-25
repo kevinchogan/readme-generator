@@ -69,13 +69,18 @@ const promptUser = () => {
       },
       {
         type: "input",
+        message: "Please provide the path to your screenshot.",
+        name: "scPath",
+      },
+      {
+        type: "input",
         message: "Please provide alternate text for your screenshot.",
         name: "scAlt",
       },
       {
         type: "input",
-        message: "Please provide the path to your screenshot.",
-        name: "scPath",
+        message: "Please provide a link to your video if you have one.",
+        name: "video",
       },
       {
         type: "input",
@@ -138,8 +143,9 @@ const makeReadMe = ({
   description,
   installation,
   usage,
-  scAlt,
   scPath,
+  scAlt,
+  video,
   credits,
   license,
   guidelines,
@@ -148,6 +154,9 @@ const makeReadMe = ({
   email,
 }) => {
   let badge = returnBadge(license);
+  let videoText;
+  video ? videoText = `[Demo Video](${video})` : videoText = "";
+
   let mdText = `
 # ${title}
 
@@ -175,6 +184,7 @@ ${installation}
 ${usage}
 
 ![alt ${scAlt}](${scPath})
+${videoText}
 
 ## Credits
 
